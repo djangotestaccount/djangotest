@@ -37,6 +37,6 @@ class DeleteView(LoginRequiredMixin, generic.DeleteView):
             messages.success(self.request, '削除しました。')
             return super().delete(request, *args, **kwargs)
 
-index=IndexView.as_view()
+index = IndexView.as_view()
 create = CreateView.as_view()
 delete = DeleteView.as_view()

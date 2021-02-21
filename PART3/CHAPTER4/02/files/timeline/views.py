@@ -27,5 +27,5 @@ class CreateView(LoginRequiredMixin, generic.CreateView):
         messages.warning(self.request, '投稿が失敗しました。')
         return redirect('timeline:index')
 
-index=IndexView.as_view()
+index = IndexView.as_view()
 create = CreateView.as_view()

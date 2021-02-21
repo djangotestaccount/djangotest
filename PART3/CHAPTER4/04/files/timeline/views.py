@@ -51,7 +51,7 @@ class LikeView(LoginRequiredMixin, generic.View):
                 'like_count': like_count}
         return JsonResponse(data)
 
-index=IndexView.as_view()
+index = IndexView.as_view()
 create = CreateView.as_view()
 delete = DeleteView.as_view()
 like = LikeView.as_view()

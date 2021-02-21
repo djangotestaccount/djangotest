@@ -18,5 +18,5 @@ class ProfileDetail(LoginRequiredMixin, generic.DetailView):
     model = CustomUser
     template_name = 'account/detail.html'
 
-edit=ProfileEdit.as_view()
-detail=ProfileDetail.as_view()
+edit = ProfileEdit.as_view()
+detail = ProfileDetail.as_view()
