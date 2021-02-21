@@ -3,7 +3,7 @@
 {% load bootstrap4 %}
 {% block title %}ログイン | POSII{% endblock %}
 {% block contents %}
-<div style="form-content">
+<div class="form-content">
   <h1 class="mb-4">ログイン</h1>
   <form method="post" action="{% url 'account_login' %}">
     {% csrf_token %}
