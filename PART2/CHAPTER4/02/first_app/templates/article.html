@@ -3,7 +3,7 @@
 {% block content %}
 <article>
     <h2>{{ article.title }}</h2>
-    <small>{{ article.created_at | date:"Y年n月j日" }}</small>
+    <small>{{ article.created_at | date:'Y年n月j日' }}</small>
     {{ article.content | linebreaks }}
     <hr> {% for comment in article.comments.all %}
     <div class="comment">
