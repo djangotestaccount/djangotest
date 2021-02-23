@@ -156,6 +156,6 @@ LOGIN_REDIRECT_URL = 'timeline:index'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
 ACCOUNT_LOGOUT_ON_GET = True
 ACCOUNT_EMAIL_SUBJECT_PREFIX = ''
-ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
 DEFAULT_FROM_EMAIL = 'admin@example.com'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

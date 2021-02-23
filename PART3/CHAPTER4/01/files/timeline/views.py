@@ -7,11 +7,11 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 
 class IndexView(generic.TemplateView):
-    template_name = "index.html"
+    template_name = 'index.html'
 
 class CreateView(LoginRequiredMixin, generic.CreateView):
     form_class = PostForm
-    success_url = reverse_lazy("timeline:index")
+    success_url = reverse_lazy('timeline:index')
 
     def form_valid(self, form):
         form.instance.author_id = self.request.user.id

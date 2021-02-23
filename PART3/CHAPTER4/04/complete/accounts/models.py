@@ -8,7 +8,7 @@ class CustomUser(AbstractUser):
     photo = models.ImageField(verbose_name='写真', blank=True, null=True, upload_to='images/')
     thumbnail = ImageSpecField(source='photo',
                                processors=[ResizeToFill(256, 256)],
-                               format="JPEG",
+                               format='JPEG',
                                options={'quality': 60})
 
 

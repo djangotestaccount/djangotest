@@ -8,7 +8,7 @@ from .models import Post, Like
 from django.http.response import JsonResponse
 
 class IndexView(LoginRequiredMixin, generic.ListView):
-    template_name = "index.html"
+    template_name = 'index.html'
     paginate_by = 10
 
     def get_queryset(self):
@@ -17,7 +17,7 @@ class IndexView(LoginRequiredMixin, generic.ListView):
 
 class CreateView(LoginRequiredMixin, generic.CreateView):
     form_class = PostForm
-    success_url = reverse_lazy("timeline:index")
+    success_url = reverse_lazy('timeline:index')
 
     def form_valid(self, form):
         form.instance.author_id = self.request.user.id
@@ -30,7 +30,7 @@ class CreateView(LoginRequiredMixin, generic.CreateView):
 
 class DeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Post
-    success_url = reverse_lazy("timeline:index")
+    success_url = reverse_lazy('timeline:index')
 
     def delete(self, request, *args, **kwargs):
         self.object = self.get_object()
@@ -42,12 +42,12 @@ class LikeView(LoginRequiredMixin, generic.View):
     model = Like
 
     def post(self, request):
-        post_id = request.POST.get("id")
+        post_id = request.POST.get('id')
         post = Post.objects.get(id=post_id)
         like = Like(user=self.request.user,post=post)
         like.save()
         like_count = Like.objects.filter(post=post).count()
-        data = {'message': "ほめました",
+        data = {'message': 'ほめました',
                 'like_count': like_count}
         return JsonResponse(data)
 

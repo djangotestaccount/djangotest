@@ -7,9 +7,9 @@ from django.contrib.messages.views import SuccessMessageMixin
 class ProfileEdit(LoginRequiredMixin, SuccessMessageMixin, generic.UpdateView):
     model = CustomUser
     form_class = ProfileForm
-    template_name = "account/edit.html"
-    success_url = "/accounts/edit/"
-    success_message = "プロフィールを更新しました。"
+    template_name = 'account/edit.html'
+    success_url = '/accounts/edit/'
+    success_message = 'プロフィールを更新しました。'
 
     def get_object(self):
         return self.request.user

@@ -26,7 +26,7 @@ urlpatterns = [
     path('accounts/inactive/', RedirectView.as_view(pattern_name='timeline:index')),
     path('accounts/password/change/', RedirectView.as_view(pattern_name='timeline:index')),
     path('accounts/confirm-email/', RedirectView.as_view(pattern_name='timeline:index')),
-    re_path(r"^accounts/confirm-email/[^/]+/", RedirectView.as_view(pattern_name='timeline:index'), kwargs=None),
+    re_path(r'^accounts/confirm-email/[^/]+/', RedirectView.as_view(pattern_name='timeline:index'), kwargs=None),
     path('accounts/', include('allauth.urls')),
 ]
 
